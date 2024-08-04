@@ -27,7 +27,7 @@ export class Game {
 
         for (let i = 0; i < count; i++) {
             const card = this._drawPile.shift()
-            this._players[i % playerCount].cards.push(card)
+            this._players[i % playerCount].deck.push(card)
         }
 
         this._discardPile.push(this._drawPile.shift())

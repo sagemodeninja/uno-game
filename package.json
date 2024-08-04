@@ -1,9 +1,10 @@
 {
+  "type": "commonjs",
   "name": "uno-game",
   "version": "0.1.0",
   "description": "Play UNO with friends!",
   "scripts": {
-    "build:dev": "webpack --mode=development",
+    "build:dev": "node build.js",
     "build:prod": "webpack --mode=production",
     "dev": "webpack --watch --mode=development"
   },
@@ -14,9 +15,12 @@
   "author": "Gary Antier <contact@garyantier.com> (https://garyantier.com)",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/socket.io-client": "^3.0.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
+    "esbuild": "0.23.0",
+    "esbuild-plugin-tsc": "^0.4.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
     "sass": "^1.77.6",

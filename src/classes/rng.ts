@@ -14,4 +14,11 @@ export class RNG {
 
         return this._seed / m;
     }
+
+    public static createCode(length: number) {
+        const min = Math.pow(36, length - 1)
+        const max = Math.pow(36, length) - 1
+        const seed = Math.floor(Math.random() * (max - min + 1)) + min
+        return seed.toString(36).toUpperCase()
+    }
 }
