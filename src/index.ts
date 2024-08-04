@@ -1,5 +1,6 @@
 import './components/card'
 import { Game, GameID } from './classes'
+import io from 'socket.io-client'
 
 document.addEventListener('DOMContentLoaded', () => {
     const gameCodeInput = document.getElementById('game_code_ipt') as HTMLInputElement
@@ -12,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const game = new Game(id)
         console.log(game)
+
+        const socket = io()
     }
 
     joinBtn.onclick = () => {

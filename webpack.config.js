@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = (_, {mode}) => {
     const isDevelopment = mode === 'development'
@@ -8,7 +9,7 @@ module.exports = (_, {mode}) => {
     return {
         entry: './src/index.ts',
         output: {
-            filename: isDevelopment ? '[name].js' : '[name].[contenthash].js',
+            filename: '[name].js',
             path: path.resolve(__dirname, 'build'),
             clean: true,
         },
@@ -18,7 +19,12 @@ module.exports = (_, {mode}) => {
             }),
             new MiniCssExtractPlugin({
                 filename: isDevelopment ? '[name].css' : '[name].[contenthash].css'
-            })
+            }),
+            new CopyPlugin({
+                patterns: [
+                    './src/server.js'
+                ],
+            }),
         ],
         module: {
             rules: [
