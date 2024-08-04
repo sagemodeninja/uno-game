@@ -28,6 +28,10 @@ export class UnoCard extends CustomComponent {
             margin: 5px;
             overflow: hidden;
         }
+        
+        :host([wild]) .content {
+            background-color: black;
+        }
 
         .content::before {
             background-color: white;

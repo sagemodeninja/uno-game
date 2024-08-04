@@ -40,7 +40,7 @@ module.exports = (_, {mode}) => {
         resolve: {
             extensions: ['.ts', '.js'],
             alias: {
-                '@': path.resolve(__dirname, 'src/scripts'),
+                '@': path.resolve(__dirname, 'src'),
             }
         },
         devtool: isDevelopment ? 'inline-source-map' : false
